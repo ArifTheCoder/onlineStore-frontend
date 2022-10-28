@@ -28,7 +28,7 @@ const HomeView: React.FunctionComponent = () => {
       )}
 
       {/* If the products[] is empty, means the web store has no product yet. */}
-      {!products?.length && (
+      {products?.length === 0 && (
         <Typography>The web store has no product yet, please add.</Typography>
       )}
 

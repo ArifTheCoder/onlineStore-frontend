@@ -56,9 +56,19 @@ const reducer = (
       };
 
     case ActionType.REMOVE_PRODUCT_LINE:
+      let newLines = state.lines.filter(
+        (item, index) => index !== action.payload
+      );
+      let cartNewTotalPrice = 0;
+      newLines.forEach((line) => {
+        if (line.unitPrice)
+          cartNewTotalPrice += multiply(line.unitPrice, line.quantity);
+      });
+
       return {
         ...state,
-        lines: state.lines.filter((item, index) => index !== action.payload),
+        lines: newLines,
+        totalPrice: cartNewTotalPrice,
       };
 
     case ActionType.CHANGE_QUANTITY:
