@@ -27,6 +27,7 @@ const SnackbarMessage: React.FunctionComponent<SnackbarMessageProps> = ({
     >
       {text}
     </Alert>
+
   </Snackbar>
 );
 

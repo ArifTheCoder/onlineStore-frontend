@@ -156,12 +156,22 @@ const TopNavigation: React.FunctionComponent = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem onClick={() => navigate("/product-add")}>
+      <MenuItem
+        onClick={() => {
+          setMobileMoreAnchorEl(null);
+          navigate("/product-add");
+        }}
+      >
         <AddCircleOutlineOutlinedIcon fontSize="small" />
 
         <p className={classes.linkText}>Add Product</p>
       </MenuItem>
-      <MenuItem onClick={() => navigate("/shopping-cart")}>
+      <MenuItem
+        onClick={() => {
+          setMobileMoreAnchorEl(null);
+          navigate("/shopping-cart");
+        }}
+      >
         <Badge
           badgeContent={totalItemsInShoppingCart}
           color="error"
